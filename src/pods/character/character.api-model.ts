@@ -1,5 +1,5 @@
 export interface Character {
-  id:	string;	
+  id:	number;	
   name:	string;
   status:	string;	
   species: string;
@@ -12,18 +12,3 @@ export interface Character {
   url:	string;
   created:	string;
 }
-
-export const createEmptyCharacter = (): Character => ({
-  id: '',
-  name: '',
-  status: '',
-  species: '',
-  type:'',
-  gender:'',
-  origin:{name:'',url:''},
-  location: {name:'', url:''},
-  image:'',
-  episode:[],
-  url:'',
-  created:','
-});

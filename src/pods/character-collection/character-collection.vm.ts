@@ -4,5 +4,6 @@ export interface CharacterEntityVm {
   name: string;
   species: string;
   status: string;
-  type: string;
+  location: string;
+
 }
