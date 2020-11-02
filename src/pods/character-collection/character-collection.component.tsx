@@ -9,12 +9,13 @@ interface Props {
   onCreateCharacter: () => void;
   onEdit: (id: string) => void;
   onDelete: (id: string) => void;
+  onDetail: (id: string) => void;
 }
 
 export const CharacterCollectionComponent: React.FunctionComponent<Props> = (
   props
 ) => {
-  const { characterCollection, onCreateCharacter, onEdit, onDelete } = props;
+  const { characterCollection, onCreateCharacter, onEdit, onDelete,onDetail } = props;
 
   return (
     <div className={classes.root}>
@@ -25,7 +26,7 @@ export const CharacterCollectionComponent: React.FunctionComponent<Props> = (
       <ul className={classes.list}>
         {characterCollection.map((character) => (
           <li key={character.id}>
-            <CharacterCard character={character} onEdit={onEdit} onDelete={onDelete} />
+            <CharacterCard character={character} onEdit={onEdit} onDelete={onDelete} onDetail={onDetail} />
           </li>
         ))}
       </ul>

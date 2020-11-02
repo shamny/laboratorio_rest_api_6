@@ -21,6 +21,9 @@ export const CharacterCollectionContainer = () => {
     history.push(linkRoutes.editCharacter(id));
   };
 
+  const handleDetail = (id: string) => {
+    history.push(linkRoutes.detailCharacter(id));
+  };
   const handleDelete = async (id: string) => {
     await deleteCharacter(id);
     loadCharacterCollection();
@@ -32,6 +35,7 @@ export const CharacterCollectionContainer = () => {
       onCreateCharacter={handleCreateCharacter}
       onEdit={handleEdit}
       onDelete={handleDelete}
+      onDetail={handleDetail}
     />
   );
 };

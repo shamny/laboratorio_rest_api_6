@@ -10,6 +10,7 @@ import Avatar from '@material-ui/core/Avatar/Avatar';
 import IconButton from '@material-ui/core/IconButton/IconButton';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
+import DetailsIcon from '@material-ui/icons/Details';
 import { CharacterEntityVm } from '../character-collection.vm';
 import * as classes from './character-card.styles';
 
@@ -17,19 +18,20 @@ interface Props {
   character: CharacterEntityVm;
   onEdit: (id: string) => void;
   onDelete: (id: string) => void;
+  onDetail:(id:string) =>void;
 }
 
 export const CharacterCard: React.FunctionComponent<Props> = (props) => {
-  const { character, onEdit, onDelete } = props;
+  const { character, onEdit, onDelete, onDetail } = props;
 
   return (
     <Card>
-      <CardHeader
+      <CardHeader 
         avatar={<Avatar aria-label="Character">{character.id}</Avatar>}
         title={character.name}
         subheader={character.status}
       />
-      <CardContent>
+      <CardContent >
         <div className={classes.content}>
           <CardMedia
             image={character.picture}
@@ -51,6 +53,10 @@ export const CharacterCard: React.FunctionComponent<Props> = (props) => {
         <IconButton onClick={() => onDelete(character.id)}>
           <DeleteIcon />
         </IconButton>
+        <IconButton  onClick ={() => onDetail(character.id)}>
+          <DetailsIcon />
+        </IconButton>
+       
       </CardActions>
     </Card>
   );
