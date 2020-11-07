@@ -13,18 +13,16 @@ import Link from '@material-ui/core/Link/Link';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import { formValidation } from './character.validations';
 import { Character } from './character.vm';
 import * as classes from './character.styles';
 
 
 interface Props {
   character: Character;
-  onSave: (character: Character) => void;
 }
 
 export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
-  const { character, onSave } = props;
+  const { character} = props;
 
   return (
     <div className={classes.root}>
@@ -50,11 +48,11 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
           <Divider variant="fullWidth" />
           
           <Typography variant="subtitle1" gutterBottom >
-            Origin: <Link href={character.origin.url}>{character.origin.name} </Link>
+            First seen in:: <Link href={character.origin.url}>{character.origin.name} </Link>
           </Typography>
           <Divider variant="fullWidth" />
           <Typography variant="subtitle1" gutterBottom >
-            Location: <Link href={character.location.url}>{character.location.name} </Link>
+          Last known location:: <Link href={character.location.url}>{character.location.name} </Link>
           </Typography>
           <Divider variant="fullWidth" />
           <Typography variant="h6" gutterBottom >
@@ -68,6 +66,10 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
             )
             })}  
             </List>
+          </Typography>
+          <Divider variant="fullWidth" />
+          <Typography variant="subtitle1" gutterBottom >
+            Created: {character.created} 
           </Typography>
       </CardContent>
       

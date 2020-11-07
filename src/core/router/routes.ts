@@ -12,7 +12,7 @@ export const switchRoutes: SwitchRoutes = {
   root: '/',
   characterCollection: '/characters',
   createCharacter: '/characters/create',
-  editCharacter: '/characters/:id',
+  editCharacter: '/characters-comments/:id',
   detailCharacter: '/characters/:id',
 };
 
