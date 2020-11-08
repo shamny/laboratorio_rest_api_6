@@ -36,7 +36,7 @@ export const CharacterCommentComponent: React.FC<Props> = (props) => {
     if(value)  characterComment.comment.push(value);
     onSave(characterComment);
     setValue('');
-    setBtnDisabled(!btnDisabled);
+    setBtnDisabled(true);
   };
 
   const handleEdit = () => {
